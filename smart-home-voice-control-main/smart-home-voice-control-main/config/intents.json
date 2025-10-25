@@ -1,0 +1,136 @@
+{
+  "intents": {
+    "control_light": {
+      "name": "灯光控制",
+      "description": "控制智能灯光设备",
+      "examples": [
+        "打开客厅的灯",
+        "关闭卧室灯光",
+        "把书房灯调亮一点", 
+        "将客厅灯光设为红色",
+        "开启所有灯光",
+        "关掉厨房的灯"
+      ],
+      "entities": ["room", "device_type", "action", "brightness", "color"],
+      "actions": ["turn_on", "turn_off", "set_brightness", "set_color"]
+    },
+    "control_temperature": {
+      "name": "温度控制",
+      "description": "控制空调、暖气等温度设备",
+      "examples": [
+        "把空调温度调到26度",
+        "打开客厅空调",
+        "关闭卧室暖气",
+        "空调调到制冷模式",
+        "暖气开到最大"
+      ],
+      "entities": ["room", "device_type", "action", "temperature", "mode"],
+      "actions": ["turn_on", "turn_off", "set_temperature"]
+    },
+    "control_music": {
+      "name": "音响控制", 
+      "description": "控制音响、音箱等音频设备",
+      "examples": [
+        "播放轻音乐",
+        "音量调大一点",
+        "切换到下一首歌",
+        "暂停音乐",
+        "停止播放",
+        "音响声音小一点"
+      ],
+      "entities": ["room", "device_type", "action", "volume", "music_type"],
+      "actions": ["play", "pause", "stop", "set_volume"]
+    },
+    "control_curtain": {
+      "name": "窗帘控制",
+      "description": "控制智能窗帘",
+      "examples": [
+        "打开卧室窗帘",
+        "窗帘开一半",
+        "关闭所有窗帘",
+        "拉开客厅窗帘"
+      ],
+      "entities": ["room", "device_type", "action", "percentage"],
+      "actions": ["open", "close"]
+    },
+    "control_security": {
+      "name": "安防控制",
+      "description": "控制门锁、安防系统",
+      "examples": [
+        "锁上大门",
+        "打开房门",
+        "布防安全系统",
+        "撤防警报"
+      ],
+      "entities": ["room", "device_type", "action"],
+      "actions": ["lock", "unlock"]
+    },
+    "query_status": {
+      "name": "状态查询",
+      "description": "查询设备状态",
+      "examples": [
+        "客厅灯光状态如何",
+        "卧室空调开了吗",
+        "查看所有设备状态",
+        "厨房有哪些设备在运行"
+      ],
+      "entities": ["room", "device_type"],
+      "actions": []
+    },
+    "general_chat": {
+      "name": "一般对话",
+      "description": "普通聊天或问候",
+      "examples": [
+        "你好",
+        "谢谢",
+        "再见",
+        "你是谁",
+        "你能做什么"
+      ],
+      "entities": [],
+      "actions": []
+    }
+  },
+  "entities": {
+    "room": {
+      "name": "房间",
+      "values": ["客厅", "卧室", "厨房", "书房", "卫生间", "阳台", "主卧", "次卧"]
+    },
+    "device_type": {
+      "name": "设备类型",
+      "values": {
+        "light": ["灯", "灯光", "照明", "台灯", "吊灯", "壁灯"],
+        "air_conditioner": ["空调", "冷气", "制冷", "制暖"],
+        "heater": ["暖气", "暖风", "取暖器"],
+        "speaker": ["音响", "音箱", "播放器", "扬声器"],
+        "curtain": ["窗帘", "百叶窗", "遮光帘"],
+        "door_lock": ["门锁", "大门", "房门", "锁"]
+      }
+    },
+    "action": {
+      "name": "动作",
+      "values": {
+        "turn_on": ["打开", "开启", "启动", "开", "亮"],
+        "turn_off": ["关闭", "关掉", "停止", "关", "灭"],
+        "set_brightness": ["调亮", "调暗", "亮度", "明亮", "暗一点", "亮一点"],
+        "set_color": ["颜色", "红色", "蓝色", "绿色", "黄色", "白色", "暖色", "冷色"],
+        "set_temperature": ["温度", "度", "调温", "热一点", "冷一点"],
+        "set_volume": ["音量", "声音", "大声", "小声"],
+        "play": ["播放", "放", "播", "听"],
+        "pause": ["暂停", "停"],
+        "open": ["打开", "开启", "拉开"],
+        "close": ["关闭", "关上", "拉上"],
+        "lock": ["锁上", "锁定", "上锁"],
+        "unlock": ["解锁", "打开", "开锁"]
+      }
+    },
+    "color": {
+      "name": "颜色",
+      "values": ["红色", "绿色", "蓝色", "黄色", "紫色", "白色", "暖色", "冷色"]
+    },
+    "number": {
+      "name": "数字",
+      "values": ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "20", "30", "40", "50"]
+    }
+  }
+} 
